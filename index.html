@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- //google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+  </head>
+  <body>
+
+    <div class="top">
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <div class="row img-header">
+                    <div class="col-2 mt-0">
+                        <img class="logo img-fluid mt-0" src="Google-Play-Books.svg" alt="logo">
+                    </div>
+                    <div class="col-10 d-inline-block mt-2">
+                        <h5>Web text editor</h5>
+                        <ul class="silect-otion">
+                            <li>File</li>
+                            <li>Edit</li>
+                            <li>View</li>
+                            <li>Insert</li>
+                            <li>Help</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="float-right undo-redo">
+                    <i class="fa-solid fa-arrow-rotate-left undo" title="undo" data-toggle="tooltip" data-placement="top"></i>
+                    <i class="fa-solid fa-rotate-right redo" title="redo" data-toggle="tooltip" data-placement="top"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <a href="#" id="sharebtn" style="text-decoration: none;">
+                        <div class="share ml-3">
+                            <i class="fa-sharp fa-solid fa-share"></i>
+                            <p class="mb-0">Share</p>
+                        </div>
+                    </a>
+                </div>           
+            </div>
+        </div>
+      </header>
+
+      <main class="sticky-top py-3">
+        <div class="container-fluid">
+            <div class="row optionbar">
+                <div class="col-2 optionlist1">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="select-div">
+                                <div class="selct-txt" title="style" data-toggle="tooltip" data-placement="top">
+                                    <p class="mb-0">Normal text</p>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <div class="option-list">
+                                    <div class="option">p</div>
+                                    <div class="option">H1</div>
+                                    <div class="option">H2</div>
+                                    <div class="option">H3</div>
+                                    <div class="option">H4</div>
+                                    <div class="option">H5</div>
+                                    <div class="option">H6</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row mt-2">
+                                <div class="col-4">
+                                    <button class="btn btn-sm btn-outline-info copy" title="copy" data-toggle="tooltip" data-placement="top">
+                                        <i class="fa-solid fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-sm btn-outline-info cut" title="cut" data-toggle="tooltip" data-placement="top">
+                                        <i class="fa-solid fa-scissors"></i>
+                                    </button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-sm btn-outline-info paste" title="paste" data-toggle="tooltip" data-placement="top">
+                                        <i class="fa-solid fa-paste"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-2 optionlist2">
+                    <div class="mx-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="select-div">
+                                    <div class="selct-txt" title="font" data-toggle="tooltip" data-placement="top">
+                                        <p class="mr-3 mb-0">Times New Roman</p>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                    <div class="option-list">
+                                        <div class="option">Times New Roman</div>
+                                        <div class="option">Sans-serif</div>
+                                        <div class="option">Georgia</div>
+                                        <div class="option">Garamond</div>
+                                        <div class="option">Sedgwick Ave Display</div>
+                                        <div class="option">Courier New</div>
+                                        <div class="option">Brush Script MT</div>
+                                        <div class="option">Verdana</div>
+                                        <div class="option">Cursive</div>
+                                        <div class="option">Noto Sans JP</div>
+                                        <div class="option">Oswald</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="input-group font-size">
+                                    <div class="input-group-prepend minus" title="font size decrement" data-toggle="tooltip" data-placement="top">
+                                      <button class="input-group-text">-</button>
+                                    </div>
+                                    <input type="text" class="form-control size-value" value="4" style="text-align: center; font-weight: 600;" title="font size" data-toggle="tooltip" data-placement="top">
+                                    <div class="input-group-append plus" title="font size increment" data-toggle="tooltip" data-placement="top">
+                                      <button class="input-group-text">+</button>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-2 optionlist3">
+                    <div class="row">
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-outline-info bold" title="bold" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-bold"></i>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-outline-info italic" title="italic" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-italic"></i>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-outline-info underline" title="underline" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-underline"></i>
+                            </button>
+                        </div>
+                        <div class="col-4 mt-2">
+                            <button class="btn btn-sm btn-outline-info strike" title="strike" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-strikethrough"></i>
+                            </button>
+                        </div>
+                        <div class="col-4 mt-2">
+                            <label class="btn btn-sm btn-outline-info" for="forcolor" style="cursor: pointer;" title="font color" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-palette"></i>
+                                <input class="d-none for-color" type="color" id="forcolor">
+                            </label>    
+                        </div>
+                        <div class="col-4 mt-2">
+                            <label class="btn btn-sm btn-outline-info" for="backcolor" style="cursor: pointer;" title="highlight color" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-fill"></i>
+                                <input class="d-none highlight" type="color" id="backcolor">
+                            </label>   
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 optionlist4">
+                    <div class="row">
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-outline-info align-left" title="align left" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-align-left"></i>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-outline-info align-center" title="align center" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-align-center"></i>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-outline-info align-right" title="align right" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-align-right"></i>
+                            </button>
+                        </div>
+                        <div class="col-4 mt-2">
+                            <button class="btn btn-sm btn-outline-info align-justify" title="align justify" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-align-justify"></i>
+                            </button>
+                        </div>
+                        <div class="col-4 mt-2">
+                            <button class="btn btn-sm btn-outline-info orderList" title="order list" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-list-ol"></i>
+                            </button>
+                        </div>
+                        <div class="col-4 mt-2">
+                            <button class="btn btn-sm btn-outline-info unorderList" title="unorder list" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 optionlist5">
+                    <div class="row">
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-outline-info link" title="creat link" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-link"></i>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-outline-info linkDisable" title="link disable" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-link-slash"></i>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-outline-info horizontal-role" title="horizontal role" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-ruler-horizontal"></i>
+                            </button>
+                        </div>
+                        <div class="col-4 mt-2">
+                            <label class="btn btn-sm btn-outline-info image" for="img" style="cursor: pointer;" title="add image" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-image"></i>
+                                <input class="d-none" type="file" id="img">
+                            </label> 
+                        </div>
+                        <div class="col-4 mt-2">
+                            <button class="btn btn-sm btn-outline-info html" title="html code" data-toggle="tooltip" data-placement="top">
+                                <i class="fa-solid fa-code"></i>
+                            </button>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col-2 optionlist6">
+                    <i class="fa-solid fa-caret-down" title="hide menubar" data-toggle="tooltip" data-placement="top"></i>
+                </div>
+            </div>
+            
+        </div>
+      </main>
+
+      <div class="body">
+        <div class="text-box" id="content" contenteditable="true">
+        </div>
+    </div>
+    </div>
+
+    
+
+     
+      
+
+      <footer>
+        
+      </footer>
+    
+    
+    <script src="script.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
+  </body>
+</html>
