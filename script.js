@@ -191,8 +191,7 @@ document.querySelector(".align-right").addEventListener("click", function(){
 
 //align justify
 document.querySelector(".align-justify").addEventListener("click", function(){
-    let selec = window.getSelection();
-    document.execCommand("justifyFull", false, selec);
+    document.execCommand("justifyFull");
 })
 
 //order list
@@ -233,7 +232,7 @@ document.querySelector(".linkDisable").addEventListener("click", function(){
 
 //horizontal role
 document.querySelector(".horizontal-role").addEventListener("click", function(){
-    document.execCommand("insertHorizontalRule");
+    document.execCommand("insertHorizontalRule", false);
 })
 
 //insert image
@@ -283,5 +282,26 @@ window.onwheel = e => {
 }
 
 
+//file
+var mytxt = document.querySelector(".text-box");
+document.querySelectorAll(".dropdown-item")[0].addEventListener("click", function(){
+    mytxt.innerHTML="";
+})
+document.querySelectorAll(".dropdown-item")[1].addEventListener("click", function(){
+    let fileName = document.getElementById("filenm").value;
+    html2pdf().from(mytxt).save(fileName);
+})
+document.querySelectorAll(".dropdown-item")[2].addEventListener("click", function(){
+    let fileName = document.getElementById("filenm").value;
+    const a = document.createElement("a")
+    const blob = new Blob([mytxt.innerText]);
+    const dataUrl = URL.createObjectURL(blob);
+    a.href = dataUrl;
+    a.download = fileName + ".txt"
+    a.click();
+})
 
+document.querySelector(".fa-moon").addEventListener("click", function(){
+    document.body.classList.toggle("dark-theme");
+})
 

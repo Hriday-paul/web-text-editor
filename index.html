@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Web text editor</title>
+    <link rel = "icon" href = "Google-Play-Books.svg"
+        type = "image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,13 +19,10 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="style.css">
-    <style>
-    </style>
   </head>
   <body>
 
-    <div class="top">
-    <header class="container-fluid">
+    <header class="container-fluid" style="z-index: 90;">
         <div class="row">
             <div class="col-6">
                 <div class="row img-header">
@@ -32,13 +31,21 @@
                     </div>
                     <div class="col-10 d-inline-block mt-2">
                         <h5>Web text editor</h5>
-                        <ul class="silect-otion">
-                            <li>File</li>
-                            <li>Edit</li>
-                            <li>View</li>
-                            <li>Insert</li>
-                            <li>Help</li>
-                        </ul>
+                            <div class="silect-otion">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    File
+                                    </button>
+                                    <div class="dropdown-menu" style="z-index: 99;">
+                                        <div class="dropdown-item">New</div>
+                                        <div class="dropdown-item">Save as pdf</div>
+                                        <div class="dropdown-item">Save as txt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input id="filenm" type="text" class="form-control form-control-sm input-style" value="document"/>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -46,7 +53,8 @@
                 <div class="float-right undo-redo">
                     <i class="fa-solid fa-arrow-rotate-left undo" title="undo" data-toggle="tooltip" data-placement="top"></i>
                     <i class="fa-solid fa-rotate-right redo" title="redo" data-toggle="tooltip" data-placement="top"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <!-- <i class="fa-regular fa-star"></i> -->
+                    <i class="fa-solid fa-moon" title="day/night" data-toggle="tooltip" data-placement="top" style="padding: 10px 14px;"></i>
                     <a href="#" id="sharebtn" style="text-decoration: none;">
                         <div class="share ml-3">
                             <i class="fa-sharp fa-solid fa-share"></i>
@@ -58,7 +66,7 @@
         </div>
       </header>
 
-      <main class="sticky-top py-3">
+      <main class="sticky-top py-3" style="z-index: 50;">
         <div class="container-fluid">
             <div class="row optionbar">
                 <div class="col-2 optionlist1">
@@ -131,7 +139,7 @@
                                     <div class="input-group-prepend minus" title="font size decrement" data-toggle="tooltip" data-placement="top">
                                       <button class="input-group-text">-</button>
                                     </div>
-                                    <input type="text" class="form-control size-value" value="4" style="text-align: center; font-weight: 600;" title="font size" data-toggle="tooltip" data-placement="top">
+                                    <input type="text" class="form-control size-value input-style" value="4" style="text-align: center; font-weight: 600;" title="font size" data-toggle="tooltip" data-placement="top">
                                     <div class="input-group-append plus" title="font size increment" data-toggle="tooltip" data-placement="top">
                                       <button class="input-group-text">+</button>
                                     </div>
@@ -249,23 +257,11 @@
         </div>
       </main>
 
-      <div class="body">
-        <div class="text-box" id="content" contenteditable="true">
+        <div class="body">
+            <div class="text-box" id="content" contenteditable="true">
+            </div>
         </div>
-    </div>
-    </div>
 
-    
-
-     
-      
-
-      <footer>
-        
-      </footer>
-    
-    
-    <script src="script.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -276,5 +272,10 @@
     <script>
         $('[data-toggle="tooltip"]').tooltip();
     </script>
+
+    <script src="script.js"></script>
+
+    <!-- html2Pdf convert link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   </body>
 </html>

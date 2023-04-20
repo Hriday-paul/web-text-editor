@@ -3,19 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --bg-color : #fff;
+    --txt-colcor : black;
+    --box-shadow : 1px 1px 20px rgb(201, 201, 201);
+    --light-efect : #e9ecef;
+    --text-field : #fff;
+    --field-color : black;
+}
 a{
     cursor: pointer;
 }
-.top{
-    box-shadow: 1px 1px 10px rgb(196, 196, 196);
-}
 header{
-    height: 70px;
-    background-color: #fff;
+    height: 75px;
+    background-color: var(--bg-color);
 }
 .img-header{
     display: flex;
     align-items: center;
+}
+.img-header h5{
+    color: var(--txt-colcor);
 }
 .logo{
     cursor: pointer;
@@ -28,16 +36,10 @@ header{
     list-style: none;
     flex-wrap: wrap;
     align-items: center;
+    gap: 10px;
 }
-.silect-otion li{
-    padding: 4px 10px;
+.silect-otion .dropdown-item{
     cursor: pointer;
-    border-radius: 5px;
-    transition: 0.2s;
-    font-size: 15px;
-}
-.silect-otion li:hover{
-    background-color: #ecf4fa;
 }
 .undo-redo{
     margin-top: 20px;
@@ -47,14 +49,15 @@ header{
 }
 .undo-redo i{
     font-size: 23px;
-    color: rgb(61, 61, 61);
-    padding: 10px;
+    color: var(--txt-colcor);
+    padding: 10px 12px;
     border-radius: 50%;
     cursor: pointer;
     transition: 0.2s;
 }
 .undo-redo i:hover{
-    background-color: #ecf4fa;
+    /* background-color: #ecf4fa; */
+    background-color: var(--light-efect);
 }
 .share{
     background-color: #17a2b8;
@@ -84,7 +87,7 @@ header{
 
 /* header end */
 main{
-    background-color: #fff;
+    background-color: var(--bg-color);
 }
 .col-2{
     border-right: 1px solid gray;
@@ -99,6 +102,7 @@ main{
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
+    color: var(--txt-colcor);
     padding: 5px 10px;
     border-radius: 3px;
     cursor: pointer;
@@ -112,17 +116,18 @@ main{
 }
 .option-list{
     display: none;
-    background-color:  White;
+    background-color:  var(--bg-color);
+    color: var(--txt-colcor);
     padding: 10px 0;
     position: absolute;
     top: 37px;
     left: 0;
     width: 100%;
     border-radius: 5px;
-    height: 258px;
+    max-height: 258px;
     width: 130%;
     overflow-y: scroll;
-    box-shadow: 1px 1px 20px rgb(201, 201, 201);
+    box-shadow: var(--box-shadow);
     z-index: 1;
 }
 .option-block{
@@ -138,6 +143,7 @@ main{
 }
 .option-list .option:hover{
     background-color:  #ecf4fa;
+    color: black;
 }
 .option-list::-webkit-scrollbar{
     width: 4px;
@@ -146,8 +152,22 @@ main{
 .option-list::-webkit-scrollbar-thumb{
     background-color:  #72cffa;
 }
+.input-group-text{
+    background-color: var(--light-efect);
+    color: var(--txt-colcor);
+}
+.input-style{
+    background-color: var(--bg-color);
+    color: var(--txt-colcor);
+}
+.input-style:focus{
+    background-color: var(--bg-color);
+    color: var(--txt-colcor);
+}
 .fa-caret-down{
     transition: 0.2s;
+    background-color: var(--bg-color);
+    color: var(--txt-colcor);
 }
 .dropDown-style{
     transform: rotate(180deg);
@@ -176,27 +196,25 @@ main{
     border-radius: 10px;
 }
 .optionlist6 .fa-caret-down:hover{
-    background-color: #eef5f8;
+    background-color: var(--light-efect);
 }
 .head-none{
     height: 0;
     overflow: hidden;
     transition: 0.3s ease-in-out;
 }
-.top {
-    box-shadow: 1px 1px 10px rgb(206, 206, 206);
-}
 
 /*text-box  start*/
 .body{
-    background-color: #eef5f8;
+    background-color: var(--light-efect);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 120vh;
 }
 .text-box{
-    background-color: #fff;
+    background-color: var(--text-field);
+    color: var(--field-color);
     width: 60%;
     min-height: 110vh;
     padding: 60px 80px;
@@ -204,6 +222,10 @@ main{
 .text-box img{
     height: 180px;
     width: 200px;
+}
+.text-box hr{
+    color: black;
+    height: 2px;
 }
 .sticky-top{
     box-shadow: 0 5px 4px -2px rgb(230, 230, 230);
@@ -213,5 +235,12 @@ main{
 .btn-true{
     background-color: #17a2b8;
     color: #fff;
+}
+
+.dark-theme{
+    --bg-color :  #0D1721;
+    --txt-colcor : #fff;
+    --box-shadow : none;
+    --light-efect : #05090e;
 }
 
