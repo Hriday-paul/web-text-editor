@@ -215,8 +215,8 @@ main{
 .text-box{
     background-color: var(--text-field);
     color: var(--field-color);
-    width: 60%;
-    min-height: 110vh;
+    width: 80%;
+    min-height: 100vh;
     padding: 60px 80px;
 }
 .text-box img{
