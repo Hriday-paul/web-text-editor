@@ -85,6 +85,19 @@ document.querySelector(".undo").addEventListener("click", function(){
 document.querySelector(".redo").addEventListener("click", function(){
     document.execCommand("redo");
 })
+document.getElementById("sharebtn").addEventListener("click", function(){
+    if(navigator.share){
+        navigator.share({
+            url : 'https://hriday-paul.github.io/web-text-editor/'
+        })
+        .catch((e)=>{
+            console.log(e.name)
+        })
+    }
+    else{
+        console.log("Thats link browser not supported");
+    }
+})
 
 //hide and show topbar
 document.querySelector(".optionlist6 i").addEventListener("click", function(){
