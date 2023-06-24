@@ -15,6 +15,26 @@ all_selector.forEach((selector)=>{
     })
 })
 
+//file
+var mytxt = document.querySelector(".text-box");
+document.querySelectorAll(".dropdown-item")[0].addEventListener("click", function(){
+    mytxt.innerHTML="";
+})
+document.querySelectorAll(".dropdown-item")[1].addEventListener("click", function(){
+      let fileName = document.getElementById("filenm").value;
+      html2pdf().from(mytxt).save(fileName);
+})
+document.querySelectorAll(".dropdown-item")[2].addEventListener("click", function(){
+    let fileName = document.getElementById("filenm").value;
+    const a = document.createElement("a")
+    const blob = new Blob([mytxt.innerText]);
+    const dataUrl = URL.createObjectURL(blob);
+    a.href = dataUrl;
+    a.download = fileName + ".txt"
+    a.click();
+})
+
+
 //change font size increment decrement
 
 let fontFather = document.querySelector(".font-size");
@@ -85,6 +105,13 @@ document.querySelector(".undo").addEventListener("click", function(){
 document.querySelector(".redo").addEventListener("click", function(){
     document.execCommand("redo");
 })
+
+//dark mode
+document.querySelector(".fa-moon").addEventListener("click", function(){
+    document.body.classList.toggle("dark-theme");
+})
+
+//share link
 document.getElementById("sharebtn").addEventListener("click", function(){
     if(navigator.share){
         navigator.share({
@@ -118,24 +145,62 @@ document.querySelector(".cut").addEventListener("click", function(){
 //paste
 document.querySelector(".paste").addEventListener("click", function(){
     document.execCommand("paste");
+    const selection = window.getSelection();
+    const selectedText = selection.toString();
+    navigator.clipboard.readText()
+    .then((e)=>{
+        let span = document.createElement("span");
+        span.innerText = e;
+        //sorry, it paste does not work wit chrome ):
+    })
+
 })
 
 //text bold
 document.querySelector(".bold").addEventListener("click", function(){
     document.execCommand("bold");
+    const isBold = document.queryCommandState('bold');
+    
+    if (isBold) {
+        this.classList.add('btn-true');
+    } else {
+        this.classList.remove('btn-true');
+    }
 })
+ 
 
 //text italic
 document.querySelector(".italic").addEventListener("click", function(){
     document.execCommand("italic");
+    const isItalic = document.queryCommandState('italic');
+    
+    if (isItalic) {
+        this.classList.add('btn-true');
+    } else {
+        this.classList.remove('btn-true');
+    }
 })
 //text underline
 document.querySelector(".underline").addEventListener("click", function(){
     document.execCommand("underline");
+    const isUnderline = document.queryCommandState('underline');
+    
+    if (isUnderline) {
+        this.classList.add('btn-true');
+    } else {
+        this.classList.remove('btn-true');
+    }
 })
 //text strike
 document.querySelector(".strike").addEventListener("click", function(){
     document.execCommand("strikeThrough");
+    const isStrikeThrough = document.queryCommandState('strikeThrough');
+    
+    if (isStrikeThrough) {
+        this.classList.add('btn-true');
+    } else {
+        this.classList.remove('btn-true');
+    }
 })
 //text forground color
 var forcolor = document.querySelector(".for-color")
@@ -147,10 +212,10 @@ forcolor.addEventListener("change", function(){
         })
     }
     let pro2 = (colorCode)=>{
-        return new Promise(()=>{
-            document.execCommand("foreColor", true , colorCode);
+        return new Promise((resolve)=>{
+            document.execCommand("foreColor", false , colorCode);
+            resolve(true);
         })
-        
     }
     async function color(){
         const p1 = await pro1();
@@ -174,7 +239,6 @@ backclr.addEventListener("change", function(){
             document.execCommand("hiliteColor", false , code);
         })
     }
-
     async function background(){
         try{
             const x1 = await prom1();
@@ -189,12 +253,12 @@ backclr.addEventListener("change", function(){
 
 //align left
 document.querySelector(".align-left").addEventListener("click", function(){
-    document.execCommand("justifyLeft")
+    document.execCommand("justifyLeft");
 })
 
 //align center
 document.querySelector(".align-center").addEventListener("click", function(){
-    document.execCommand("justifyCenter")
+    document.execCommand("justifyCenter");
 })
 
 //align right
@@ -210,11 +274,25 @@ document.querySelector(".align-justify").addEventListener("click", function(){
 //order list
 document.querySelector(".orderList").addEventListener("click", function(){
     document.execCommand("insertorderedlist");
+    const isinsertorderedlist = document.queryCommandState('insertorderedlist');
+    
+    if (isinsertorderedlist) {
+        this.classList.add('btn-true');
+    } else {
+        this.classList.remove('btn-true');
+    }
 })
 
 //unorderlist
 document.querySelector(".unorderList").addEventListener("click", function(){
     document.execCommand("insertUnorderedList");
+    const isinsertUnorderedList = document.queryCommandState('insertUnorderedList');
+    
+    if (isinsertUnorderedList) {
+        this.classList.add('btn-true');
+    } else {
+        this.classList.remove('btn-true');
+    }
 })
 
 //creat link
@@ -293,28 +371,3 @@ window.onwheel = e => {
         
     }
 }
-
-
-//file
-var mytxt = document.querySelector(".text-box");
-document.querySelectorAll(".dropdown-item")[0].addEventListener("click", function(){
-    mytxt.innerHTML="";
-})
-document.querySelectorAll(".dropdown-item")[1].addEventListener("click", function(){
-    let fileName = document.getElementById("filenm").value;
-    html2pdf().from(mytxt).save(fileName);
-})
-document.querySelectorAll(".dropdown-item")[2].addEventListener("click", function(){
-    let fileName = document.getElementById("filenm").value;
-    const a = document.createElement("a")
-    const blob = new Blob([mytxt.innerText]);
-    const dataUrl = URL.createObjectURL(blob);
-    a.href = dataUrl;
-    a.download = fileName + ".txt"
-    a.click();
-})
-
-document.querySelector(".fa-moon").addEventListener("click", function(){
-    document.body.classList.toggle("dark-theme");
-})
-
